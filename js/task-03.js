@@ -25,10 +25,12 @@ const images = [
 
 const galleryEl = document.querySelector('.gallery');
 
+galleryEl.style.cssText = 'display: flex; justify-content: space-around; list-style: none';
+
 const createItem = ({ url, alt }) => `<li class = "gallery__item">
-<img src= "${url}" alt = "${alt}"></li>`;
+<img width = '750' height = '450' src= "${url}" alt = "${alt}"></li>`;
 
 const markup = images.map((data) => createItem(data)).join('');
 console.log(markup);
 
-galleryEl.insertAdjacentElement('beforeend', markup);
+galleryEl.insertAdjacentHTML('beforeend', markup);
